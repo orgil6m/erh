@@ -6,7 +6,7 @@ class MyDocument extends Document
         return (
             <Html lang="en" className='dark'>
                 <Head>
-                    <meta name="OZZO LLC" content="ozzo" />
+                    <meta name="ЭРХ" content="ТЭД ЭРХЛЭХ Л ЭРХТЭЙ" />
                     <link rel="shortcut icon" href="/ozzo.ico" />
                 </Head>
                 <body className='bg-white text-black'>
