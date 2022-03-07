@@ -7,13 +7,10 @@ function Home() {
   return (
    <div>
      <Head>
-      <title>Нүүр</title>
+      <title>Эрхүүд</title>
      </Head>
      <h3 className={styles.title}>
-     Нүүр
-
-
-
+        Эрхүүд
       </h3>
    </div>
   );
