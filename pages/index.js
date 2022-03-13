@@ -11,10 +11,8 @@ function Home() {
      </Head>
      <h3 className={styles.title}>
      Нүүр
-
-
-
       </h3>
+     {/* <Login />  */}
    </div>
   );
 }

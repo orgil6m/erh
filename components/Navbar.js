@@ -5,9 +5,10 @@ import Image from "next/image";
 import OzzoLogo from '../Assets/LOGO.png'
 
 import { useState } from 'react'
-
+import Login from './Sign/Login'
 
 const Navbar = () => {
+  const [showModal, setShowModal] = React.useState(false);
   const router = useRouter()
   const { pathname, asPath, query } = router
   const [active, setActive] = useState(false);
@@ -51,9 +52,19 @@ const Navbar = () => {
           </a>
         </Link>
       </div>
-        
+      <div className="transition-all duration-500 cursor-default ease-in-out absolute right-10 text-gray-500  flex items-center justify-center hover:text-black rounded-full"  type="button"
+        onClick={() => setShowModal(true)}>
+        <p className="font-medium font-sm cursor-default pl-2"> Нэвтрэх</p>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 ml-2" viewBox="0 0 20 20" fill="currentcolor">
+          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+        </svg>
+        </div>
       </nav>
-        
+       {showModal ? (
+        <>
+            <Login />
+        </>
+      ) : null}
     </>
   );
 };
