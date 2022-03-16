@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import Image from 'next/image';
+
+import Login from './Sign/Login'
+
 import OzzoLogo from '../Assets/LOGO.png'
 
 function Sidebar() {
-
     const router = useRouter()
+    const [showModal, setShowModal] = React.useState(false);
     const [showSidebar, setShowSidebar] = useState(false);
-    // const [isOpen, setIsOpen] = useState(false);
     return (
         <>
         <div className='lg:hidden w-full flex items-center p-3 bg-white justify-between sticky top-0 shadow-sm'>
@@ -71,8 +73,20 @@ function Sidebar() {
                         Холбоо Барих
                     </a>
                 </Link>
+                 <div className='w-screen h-px bg-gray-100 ml-2'></div>
+                <Link href='/'>
+                    <a onClick={() => {setShowModal(true), setShowSidebar(!showSidebar)}}
+                    className={`transition-all duration-500 ease-in-out m-2 pl-3 py-2 pt-2 border-l-2 border-transparent text-lg hover:text-black hover:border-violet-500`}>
+                       Нэвтрэх / Бүртгүүлэх
+                    </a>
+                </Link>
       </div>
            </div>
+           {showModal ? (
+        <>
+            <Login />
+        </>
+      ) : null}
         </>
     )
 }
